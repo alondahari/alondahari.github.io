@@ -14,7 +14,7 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: Alon Dahari
+title: Billable Hours
 
 # Short description of your site
 description: A virtual proof that name is awesome!
@@ -28,11 +28,10 @@ navbar-links:
     - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
     - Learn markdown: "http://www.markdowntutorial.com/"
     - GitHub Pages: "https://pages.github.com/"
-  Author's home: "http://deanattali.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/avatar-icon.png"
+avatar: "https://secure.gravatar.com/avatar/7aa33579aa0603dce450f5956bdf8d89"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -79,7 +78,7 @@ social-network-links:
 #  google-plus: +DeanAttali
   linkedin: alondahari
 #  xing: yourname
-#  stackoverflow: "3943160/daattali"
+  stackoverflow: "2789806/climbinghobo"
 #  snapchat: deanat78
 #  instagram: deanat78
 #  youtube: user/deanat78
@@ -98,7 +97,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
+#url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Web Statistics Section --- #
 
