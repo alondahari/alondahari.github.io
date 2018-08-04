@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Resolving Repetitive Git Conflicts
-image: /img/git-merge.jpg
+image: /img/merge.png
 ---
 At my company's  ([Elevation Corporate Health](https://www.elevationcorporatehealth.com/)) codebase, we have a couple of files that always generate merge conflicts. Repetitively solving those conflicts just seems like a terrible waste of time.
 
