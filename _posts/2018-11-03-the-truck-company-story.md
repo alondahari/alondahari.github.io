@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Truck Company Story
-image: /img/merge.png
+image: /img/truck.png
 ---
 The CEO of my company likes to use analogies to make a point, so I thought it would be fitting for me to dedicate this post to her,
 and follow one analogy to try and explain some coding related principals to "non tech savvy" types.
