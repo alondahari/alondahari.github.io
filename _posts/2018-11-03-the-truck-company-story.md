@@ -10,7 +10,7 @@ In this analogy, we'll follow Bob and Willie, two competitors in the trucking bu
 
 Hopefully this would help explain why we dedicate some of our time as developers to perfect our code, even when sometimes it seems like there's no tangible benefit to it.
 
-_I never worked in the trucking industry, so I'm totally making all of this up..._
+_Disclaimer: I never worked in the trucking industry, so I'm totally making all of this up..._
 
 ## Follow a style guide
 
