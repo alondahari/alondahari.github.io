@@ -6,7 +6,8 @@ subtitle: Why you'd want to go on a date with me
 
 I am a man like no other. A special snow flake that floats in it's own universe. My hobbies are so unique, you wouldn't even be able to relate. Also, my mom told me I was the best baby ever.
 
+I am a lead software engineer for [Elevation Corporate Health](https://www.elevationcorporatehealth.com/). I live in a van and drive it between climbing crags and surf spots. I'm also pretty good at Catan.
 
-### my history
+If you want to read another little obscure bit of information about me, [check this page out](https://about.me/alondahari).
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Don't hesitate to get in touch, for any reason at all (except for marketing or getting me to invest in African gold).
