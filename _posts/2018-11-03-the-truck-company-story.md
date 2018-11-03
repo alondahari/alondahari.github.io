@@ -12,7 +12,7 @@ Hopefully this would help explain why we dedicate some of our time as developers
 
 _I never worked in the trucking industry, so I'm totally making all of this up..._
 
-**Follow a style guide**
+## Follow a style guide
 
 As much as it is important to have code that works well and performs well, it's also important to have code that's _readable_. We have a lot of tools to help us with this as developers (linters** of different kinds), but it's the easiest principal to throw out the window when you're pressed to deliver fast. In which case, you end up with a bunch of unmaintainable [spaghetti code](https://en.wikipedia.org/wiki/Spaghetti_code).
 
@@ -36,9 +36,8 @@ ___Willie's version:___
 
 Now, both instructions would work, and in the case of coding, it doesn't really matter what's easier to read, because a machine is "reading" it (assuming it won't take a toll on performance). The question is: _if a mistake was made, and you need to take a right on Broadway instead of a left, which set of instructions would be easier and faster to fix? which one of those you'd feel more comfortable fixing and knowing it's now "good to go"?_
 
----
 
-**The DRY principal**
+## The DRY principal
 
 According to the DRY (don't repeat yourself) principal, yo should try to strive and re-use chunks of code. It is the opposite of WET (write everything twice). It helps the maintainability of our code in two ways: it makes our code base shorter and easier to understand, and allows making changes at one place instead of many places in case we need to.
 
@@ -61,9 +60,7 @@ Now, they both find out that the drivers forget to put on the hazard lights and 
 
 On top of that, Willie's instructions resemble more closely how our brains work. Think about it, after the first delivery the driver probably remembers what he needs to do. It's also easier for them to see that they need to do exactly the same thing at each location, and therefore it's more _readable_ (and thus easier and faster to maintain).
 
----
-
-**Testing**
+## Testing
 
 Testing your code is high in cost and high in rewards. The cost is time and effort (usually not the most exciting work either). The problem is that the reward is often invisible - it only shines through when things _don't_ go wrong. When they do save the day though (usually only visible to the developers), it sure feels good!
 

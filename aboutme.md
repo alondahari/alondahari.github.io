@@ -4,12 +4,8 @@ title: About me
 subtitle: Why you'd want to go on a date with me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+I am a man like no other. A special snow flake that floats in it's own universe. My hobbies are so unique, you wouldn't even be able to relate. Also, my mom told me I was the best baby ever.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
-
-What else do you need?
 
 ### my history
 
