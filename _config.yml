@@ -23,7 +23,7 @@ email: alondaharithefirst@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A safe space for sharing ideas about software.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://jazzdragon.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://alondahari.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: jazzdragon
 locale: en-GB
 logo: img/logo.jpg
