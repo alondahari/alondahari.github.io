@@ -2,6 +2,8 @@
 layout: post
 title: The Truck Company Story
 author: alon
+categories:
+  - Coding Principals
 ---
 
 The CEO of my company likes to use analogies to make a point, so I thought it would be fitting for me to dedicate this post to her,
