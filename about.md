@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Hi!
+image: img/about.jpeg
 ---
 
 I'm Alon.
