@@ -3,8 +3,14 @@ alon:
   picture: img/alon.jpg
   links:
     - title: GitHub
-      url: https://github.io/jazzdragon
+      url: https://github.io/alondahari
       icon: fab fa-github-square
     - title: LinkedIn
       url: https://www.linkedin.com/in/alondahari/
       icon: fab fa-linkedin
+    - title: Email
+      url: mailto:climbinghobo@gmail.com
+      icon: fab fa-envelope
+    - title: Stack Overflow
+      url: https://stackoverflow.com/users/2789806/alon-dahari
+      icon: fab fa-stack-overflow
