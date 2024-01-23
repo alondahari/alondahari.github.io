@@ -1,0 +1,10 @@
+alon:
+  name: Alon Dahari
+  picture: img/alon.jpg
+  links:
+    - title: GitHub
+      url: https://github.io/jazzdragon
+      icon: fab fa-github-square
+    - title: LinkedIn
+      url: https://www.linkedin.com/in/alondahari/
+      icon: fab fa-linkedin
