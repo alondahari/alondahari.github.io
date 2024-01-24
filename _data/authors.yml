@@ -10,7 +10,7 @@ alon:
       icon: fab fa-linkedin
     - title: Email
       url: mailto:climbinghobo@gmail.com
-      icon: fab fa-envelope
+      icon: fas fa-envelope
     - title: Stack Overflow
       url: https://stackoverflow.com/users/2789806/alon-dahari
       icon: fab fa-stack-overflow
