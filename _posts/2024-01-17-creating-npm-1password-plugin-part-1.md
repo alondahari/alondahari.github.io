@@ -99,7 +99,10 @@ var defaultEnvVarMapping = map[string]sdk.FieldName{
 }
 ```
 
-We can see here that the 1Password secret will only have one field, which is `token`. There is also a description of how that token will look like, which I filled in after looking at a generated token from NPM. The provisioner describes that the credential will be set as an environment variable when running the NPM commands, which is preferable over a temporary file since it’s more ephemeral. The name for the environment variable might seem a bit strange, see here for more details on that.
+We can see here that the 1Password secret will only have one field, which is `token`.
+There is also a description of how that token will look like, which I filled in after looking at a generated token from NPM.
+The provisioner describes that the credential will be set as an environment variable when running the NPM commands, which is preferable over a temporary file since it’s more ephemeral.
+The name for the environment variable might seem a bit strange, [see here](https://github.com/npm/cli/issues/3985#issuecomment-1195946239) for more details on that.
 
 The last file is the executable definition, which looks like this:
 
