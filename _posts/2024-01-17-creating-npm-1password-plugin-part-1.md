@@ -142,7 +142,5 @@ I then created a fresh project in a new folder and ran `npm init` with all the d
 This concludes the first post of this series, I will add another post for each improvement I make for this plugin. I plan those to be:
 
 - [Specifying which NPM commands need auth]({% link _posts/2024-01-24-npm-1password-plugin-part-2.md %})
-- Parsing the secret from an existing `.npmrc` file.
+- [Parsing the secret from an existing `.npmrc` file and supporting different backends]({% link _posts/2024-01-24-npm-1password-plugin-part-3.md %}).
 - Handling MFA.
-- Adding some optional fields to the generated 1password secret.
-- Supporting different backends.
