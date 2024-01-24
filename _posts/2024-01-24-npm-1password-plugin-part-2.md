@@ -1,8 +1,5 @@
 ---
-layout: post
-title: NPM 1Password Plugin - Part 2
-subtitle: Adding which commands need auth
-author: alon
+title: NPM 1Password Plugin - Adding needsAuth
 image: img/1password-plugins.png
 categories:
   - Open Source

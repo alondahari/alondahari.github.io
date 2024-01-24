@@ -1,7 +1,5 @@
 ---
-layout: post
 title: Creating an NPM 1Password shell plugin
-author: alon
 image: img/1password-plugins.png
 categories:
   - Open Source

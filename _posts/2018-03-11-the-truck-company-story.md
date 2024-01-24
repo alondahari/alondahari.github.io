@@ -1,7 +1,5 @@
 ---
-layout: post
 title: The Truck Company Story
-author: alon
 categories:
   - Coding Principals
 ---

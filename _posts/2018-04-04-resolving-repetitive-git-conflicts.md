@@ -1,9 +1,7 @@
 ---
-layout: post
 title: Resolving Repetitive Git Conflicts
 categories:
   - Git
-author: alon
 ---
 
 At my company's codebase, we have a couple of files that always generate merge conflicts. Repetitively solving those conflicts just seems like a terrible waste of time.
