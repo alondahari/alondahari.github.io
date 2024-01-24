@@ -133,11 +133,14 @@ Pretty similar to the first file. In the future we will add here the `NeedsAuth`
 
 There is also a test file, but I’ll get to that later.
 
-## Initial manual testing
+## Manual testing
 
 To test the plugin, I first ran `make npm/validate` to make sure everything was in order, and then `make npm/build` to build it locally. This command built the plugin in my home configs, usually at `~/.op/plugins/local` on a Mac.
 
-I then created a fresh project in a new folder and ran `npm init` with all the defaults. After that, ran `op plugin init npm` to create the secret on my 1password account, and used an access token I created on my NPM account. After that, it was simply a matter of running `npm i <my-private-npm-package>`. It worked!
+To initiate the plugin locally, I ran `op plugin init npm` to create the secret on my 1password account, and used an access token I created on my NPM account. Make sure to remove any local `.npmrc` files, so they are not used.
+After that, it was simply a matter of running `npm whoami` to verify my token was used successfully. It worked!
+
+<script async id="asciicast-633115" src="https://asciinema.org/a/633115.js"></script>
 
 This concludes the first post of this series, I will add another post for each improvement I make for this plugin. I plan those to be:
 
