@@ -69,7 +69,7 @@ func AccessToken() schema.CredentialType {
 
 After rebuilding the package and retrying in my test project, I'm getting the correct prompting from the plugin:
 
-<script async id="asciicast-633073" src="https://asciinema.org/a/633073.js"></script>
+_<script async id="asciicast-633073" src="https://asciinema.org/a/633073.js"></script>_
 
 ## Per-Project Config Support
 
@@ -104,7 +104,7 @@ We will then add those to the schema:
 
 Trying that out, with both files present:
 
-<script async id="asciicast-633257" src="https://asciinema.org/a/633257.js"></script>
+_<script async id="asciicast-633257" src="https://asciinema.org/a/633257.js"></script>_
 
 ## Support different backends
 
