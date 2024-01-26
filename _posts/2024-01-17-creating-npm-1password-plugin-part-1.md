@@ -11,7 +11,7 @@ tags:
 
 I love 1Password. I especially love their CLI integration with [shell plugins](https://developer.1password.com/docs/cli/shell-plugins). Recently, I decided to dedicate some of my time to contribute to open source projects that I find interesting, so I naturally started looking at the tools I use daily.
 
-## tl;dr
+## Tl;Dr
 
 Take a look at the [open PR](https://github.com/1Password/shell-plugins/pull/422) on the GitHub repo for the end result.
 
