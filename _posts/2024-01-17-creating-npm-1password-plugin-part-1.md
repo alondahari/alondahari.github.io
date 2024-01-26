@@ -3,9 +3,19 @@ title: Creating an NPM 1Password shell plugin
 image: img/1password-plugins.png
 categories:
   - Open Source
+tags:
+  - Go
+  - CLI
+  - 1Password
 ---
 
 I love 1Password. I especially love their CLI integration with [shell plugins](https://developer.1password.com/docs/cli/shell-plugins). Recently, I decided to dedicate some of my time to contribute to open source projects that I find interesting, so I naturally started looking at the tools I use daily.
+
+## tl;dr
+
+Take a look at the [open PR](https://github.com/1Password/shell-plugins/pull/422) on the GitHub repo for the end result.
+
+## Exploration
 
 Looking through their [open source shell plugins repo](https://github.com/1Password/shell-plugins) on GitHub, I quickly found that there is no plugin for NPM. There was a [previous attempt](https://github.com/1Password/shell-plugins/pull/168) for it, but that was deserted. However, I could see that the internal team was excited about the plugin from that open PR, so I got to working.
 
