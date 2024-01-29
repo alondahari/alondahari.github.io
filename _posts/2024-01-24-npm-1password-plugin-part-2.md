@@ -7,7 +7,7 @@ categories:
 
 So we have our basic implementation of the plugin, now it's time to make it better. This next step is pretty short and straight forward. We need to describe in the plugin which commands in our NPM CLI would require auth from 1password.
 
-_This is part 2 of a series of articles about adding an NPM shell plugin to 1Password. For more context, please check out [part 1]({% link _posts/2024-01-17-creating-npm-1password-plugin-part-1.md %})._
+_This is part 2 of a series of articles about adding an NPM shell plugin to 1Password. For more context, please check out [part 1]({% link _posts/2024-01-17-npm-1password-plugin-part-1.md %})._
 
 An example of when we don't need to authenticate is when the command includes the `--help` or `--version` flags. In our case, when running `npm uninstall` for example, we would never need to authenticate.
 

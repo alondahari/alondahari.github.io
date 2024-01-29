@@ -7,8 +7,7 @@ categories:
 
 After creating the basic flow of creating a secret token from scratch, we tackle the part of parsing an existing `.npmrc` file.
 
-_This is part 3 of a series of articles about adding an NPM shell plugin to 1Password.
-For more context, please check out [part 1]({% link _posts/2024-01-17-creating-npm-1password-plugin-part-1.md %}) and [part 2]({% link _posts/2024-01-24-npm-1password-plugin-part-3.md %})._
+_This is part 3 of a series of articles about adding an NPM shell plugin to 1Password. For more context, please check out [part 1]({% link _posts/2024-01-17-npm-1password-plugin-part-1.md %}) and [part 2]({% link _posts/2024-01-24-npm-1password-plugin-part-2.md %})._
 
 This part is a bit more involved and required me to delve a little into coding in Go.
 
@@ -213,6 +212,8 @@ func configFile(in sdk.ProvisionInput) ([]byte, error) {
 
 Finally, we swap out the provisioner in our schema:
 
+{% raw %}
+
 ```golang
     DefaultProvisioner: provision.TempFile(configFile,
       provision.Filename(".npmrc"),
@@ -221,5 +222,7 @@ Finally, we swap out the provisioner in our schema:
       ),
     ),
 ```
+
+{% endraw %}
 
 That's it for now. Not sure if I'm going to tackle MFA, but we'll see. I think I'll try to submit this PR and see what feedback I get from the maintainers, stay tuned!
