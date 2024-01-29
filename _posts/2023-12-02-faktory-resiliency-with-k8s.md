@@ -10,6 +10,8 @@ tags:
 
 My current project heavily relies on background Faktory jobs, which are mission-critical. We have multiple Faktory workers (clients) in our K8S cluster that pull the queued jobs, providing ample resiliency. Given the crucial nature of successfully enqueueing the jobs for our application, we've identified a potential issue with having a single Faktory server, and we were hoping to address this concern.
 
+_**Fair warning:** The topic discussed here involves unresolved issues, and we ultimately adopted a slightly different approach to address this challenge. If you are seeking a straightforward how-to guide, this might not be suitable for you. I've written this post as a learning experience, which, in my opinion, contains some useful information_
+
 To further illustrate the problem, consider an API endpoint responsible for handling user payments. This endpoint initiates a chain of Faktory jobs to ensure smooth money movement and ledgering, all processed asynchronously. If the Faktory server goes down at any point, the API endpoint will fail because the job cannot be enqueued, leading to service denial for our users.
 
 Our starting point of a single server Faktory deployment on K8S, following [the Faktory docs](https://github.com/contribsys/faktory/wiki/Kubernetes-Deployment-Example), looked like this:
