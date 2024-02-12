@@ -74,10 +74,7 @@ social-network-links:
   facebook: alondahari
   github: jazzdragon
   twitter: climbinghobo
-#  reddit: yourname
-#  google-plus: +DeanAttali
   linkedin: alondahari
-#  xing: yourname
   stackoverflow: "2789806/climbinghobo"
 #  snapchat: deanat78
 #  instagram: deanat78
@@ -102,7 +99,7 @@ share-links-active:
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics ID to track your website using GA
-google_analytics: "UA-128618937-1"
+google_analytics: "G-BJ114S0FVT"
 
 # Google Tag Manager ID
 #gtm: ""
@@ -145,16 +142,14 @@ kramdown:
 
 # Default YAML values (more information on Jekyll's site)
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
-      comments: true  # add comments to all blog posts
+      comments: true # add comments to all blog posts
       social-share: true # add social media sharing buttons to all blog posts
-  -
-    scope:
+  - scope:
       path: "" # all files
     values:
       layout: "page"
@@ -176,8 +171,8 @@ exclude:
 
 # prose.io config
 prose:
-  rooturl: '_posts'
-  media: 'img'
+  rooturl: "_posts"
+  media: "img"
   ignore:
     - 404.html
     - LICENSE
@@ -229,6 +224,5 @@ prose:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-
 # Beautiful Jekyll / Dean Attali
 # 2fc73a3a967e97599c9763d05e564189
