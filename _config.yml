@@ -42,7 +42,8 @@ paginate_path: /page:num/
 read_time: true
 words_per_minute: 200
 
-google_analytics: "G-BJ114S0FVT"
+# This usage doesn't work until https://github.com/mmistakes/so-simple-theme/pull/429/files is merged
+# google_analytics: "G-BJ114S0FVT"
 disqus:
   shortname: "billable-hours"
 
