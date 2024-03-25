@@ -1,5 +1,7 @@
 ---
 title: Deep Dive Into SSH Commit Signing
+image:
+  path: img/ssh-commit-signing.png
 categories:
   - Git
   - Security
@@ -39,14 +41,14 @@ Let's explore ssh-keygen and see how it works. I will be using the following com
 ssh-keygen -t ed25519 -C "myuser@example.com"
 ```
 
-This command generates a new RSA key-pair with a key length of 4096 bits.
+This command generates a new key-pair using the Ed25519 algorithm.
 The `-C` flag is used to add a comment to the key. This is used when signing commits to identify the user who signed the commit.
 
 After running the command, you will be asked where to save the key.
 By default, the keys are saved in `~/.ssh/id_ed25519` for the private key and `~/.ssh/id_ed25519.pub` for the public key.
 
 You can also specify a passphrase to protect the private key, but I will not be doing that in this example.
-Personally, I have [1Password](https://developer.1password.com/docs/ssh) to manage my passwords, so I don't see the need to add a passphrase to my private key.
+Personally, I have [1Password](https://developer.1password.com/docs/ssh) to manage my passwords, so that option is not something I need to explore.
 
 Let's take a look at the private key:
 
@@ -96,7 +98,18 @@ It is a long string of characters that can be used to verify the signature.
 
 In order to verify the signature, we need to add a `allowed_signers` file to specify which signatures are allowed.
 To do so, create a file called `allowed_signers` and add the public key to it. All you need to do is move your email to the start of the line and add the public key at the end of the line.
-For example, if your id_ed25519.pub file contains `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDq04V5OobzsNHjBcavKcKKui2SByCnKSH0UYA/0Ntbm myuser@example.com`, your allowed_signers file should contain `myuser@example.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDq04V5OobzsNHjBcavKcKKui2SByCnKSH0UYA/0Ntbm`.
+
+For example, if your id_ed25519.pub file contains:
+
+```
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDq04V5OobzsNHjBcavKcKKui2SByCnKSH0UYA/0Ntbm myuser@example.com
+```
+
+your allowed_signers file should contain:
+
+```
+  myuser@example.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDq04V5OobzsNHjBcavKcKKui2SByCnKSH0UYA/0Ntbm
+```
 
 Next, let's verify the signature using the public key:
 
@@ -122,7 +135,8 @@ SSH commit signing provides several benefits:
 
 Let's explore these benefits by signing a commit by contemplating the possibilities of what could go wrong if we didn't sign the commit.
 
-1. **Integrity**: Let's say you are working on a project with a team of developers. One of the developers is a malicious actor who tampers with the code before committing it.
+#### Integrity
+Let's say you are working on a project with a team of developers. One of the developers is a malicious actor who tampers with the code before committing it.
 If you don't sign your commits, there is no way to verify that the code has been tampered with.
 However, if you sign your commits, you can verify that the code has not been tampered with.
 
@@ -148,7 +162,9 @@ Could not verify signature.
 Nice! The signature verification failed, which gives us confidence that if our commits will be tampered with in any way, the verification will fail.
 Any time the commit is changed (say, through a rebase), the commit has to be signed again, which requires the private key.
 
-2. **Authentication**: Let's say you are working on a project with a team of developers. One of the developers is a malicious actor who commits code under your name.
+#### Authentication
+
+Let's say you are working on a project with a team of developers. One of the developers is a malicious actor who commits code under your name.
 If you don't sign your commits, there is no way to prove that you did not commit the code.
 However, if you sign your commits, you can prove that you did not commit the code.
 
@@ -170,7 +186,8 @@ Could not verify signature.
 
 The verification failed because the signature in the `allowed_signers` file does not match the signature of the file, which means that the commit was not signed by the correct user.
 
-3. **Non-repudiation**: This is similar to the authentication benefit, but it is more about proving that you did commit the code.
+#### Non-repudiation
+This is similar to the authentication benefit, but it is more about proving that you did commit the code.
 If you sign your commits, you cannot deny that you committed the code because the signature is unique to your private key.
 
 ## Conclusion
