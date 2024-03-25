@@ -45,6 +45,9 @@ The `-C` flag is used to add a comment to the key. This is used when signing com
 After running the command, you will be asked where to save the key.
 By default, the keys are saved in `~/.ssh/id_ed25519` for the private key and `~/.ssh/id_ed25519.pub` for the public key.
 
+You can also specify a passphrase to protect the private key, but I will not be doing that in this example.
+Personally, I have [1Password](https://developer.1password.com/docs/ssh) to manage my passwords, so I don't see the need to add a passphrase to my private key.
+
 Let's take a look at the private key:
 
 ```bash
@@ -58,6 +61,8 @@ Let's take a look at the public key:
 ```bash
 cat ~/.ssh/id_ed25519.pub
 ```
+
+The public key is a shorter string of characters that can be shared with anyone. It is used to verify that the data was signed with the private key.
 
 Next, let's sign a file using the private key:
 
@@ -89,10 +94,89 @@ cat hello.txt.sig
 
 It is a long string of characters that can be used to verify the signature.
 
-In order to verify the signature, we need to add a known principals file to specify which signatures are allowed.
+In order to verify the signature, we need to add a `allowed_signers` file to specify which signatures are allowed.
+To do so, create a file called `allowed_signers` and add the public key to it. All you need to do is move your email to the start of the line and add the public key at the end of the line.
+For example, if your id_ed25519.pub file contains `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDq04V5OobzsNHjBcavKcKKui2SByCnKSH0UYA/0Ntbm myuser@example.com`, your allowed_signers file should contain `myuser@example.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDq04V5OobzsNHjBcavKcKKui2SByCnKSH0UYA/0Ntbm`.
 
 Next, let's verify the signature using the public key:
 
 ```bash
-ssh-keygen -Y verify -n file -f ~/.ssh/id_ed25519.pub -I myuser@example.com -s hello.txt.sig hello.txt
+cat hello.txt | ssh-keygen -Y verify -n file -f allowed_signers -I myuser@example.com -s hello.txt.sig 
 ```
+
+You should see this output:
+
+```
+Good "file" signature for myuser@example.com with ED25519 key SHA256:2aAXDGrsfr7AMN8uH/m2qtycnHuXoE6VFN9chBYcCCk
+```
+
+In the next section, we will explore the benefits of SSH commit signing by playing around with this verify command.
+
+## Benefits of SSH commit signing
+
+SSH commit signing provides several benefits:
+
+1. **Integrity**: By signing your commits, you can ensure that the code has not been tampered with.
+2. **Authentication**: By signing your commits, you can prove that you are the author of the code.
+3. **Non-repudiation**: By signing your commits, you cannot deny that you authored the code.
+
+Let's explore these benefits by signing a commit by contemplating the possibilities of what could go wrong if we didn't sign the commit.
+
+1. **Integrity**: Let's say you are working on a project with a team of developers. One of the developers is a malicious actor who tampers with the code before committing it.
+If you don't sign your commits, there is no way to verify that the code has been tampered with.
+However, if you sign your commits, you can verify that the code has not been tampered with.
+
+To demonstrate this, let's tamper with the file in the previous example:
+
+```bash
+echo "Hello, world! Tampered" > hello.txt
+```
+
+Now, let's verify the signature:
+
+```bash
+cat hello.txt | ssh-keygen -Y verify -n file -f allowed_signers -I myuser@example.com -s hello.txt.sig 
+```
+
+This time, you should see this output:
+
+```
+Signature verification failed: incorrect signature
+Could not verify signature.
+```
+
+Nice! The signature verification failed, which gives us confidence that if our commits will be tampered with in any way, the verification will fail.
+Any time the commit is changed (say, through a rebase), the commit has to be signed again, which requires the private key.
+
+2. **Authentication**: Let's say you are working on a project with a team of developers. One of the developers is a malicious actor who commits code under your name.
+If you don't sign your commits, there is no way to prove that you did not commit the code.
+However, if you sign your commits, you can prove that you did not commit the code.
+
+When you set up commit signing with GitHub (for example), you upload your public key. Similar to how we have the `allowed_signers` file, GitHub has a list of allowed signers.
+When you sign a commit, GitHub can verify that the commit was signed with your private key, which includes your email address on GitHub.
+
+To demonstrate this, using the same earlier example, let's change the signature in the `allowed_signers` file for `myuser@example.com` and try to verify the signature:
+
+```bash
+cat hello.txt | ssh-keygen -Y verify -n file -f allowed_signers -I myuser@example.com -s hello.txt.sig 
+```
+
+This time you should see this output:
+
+```
+known_principals:1: invalid key
+Could not verify signature.
+```
+
+The verification failed because the signature in the `allowed_signers` file does not match the signature of the file, which means that the commit was not signed by the correct user.
+
+3. **Non-repudiation**: This is similar to the authentication benefit, but it is more about proving that you did commit the code.
+If you sign your commits, you cannot deny that you committed the code because the signature is unique to your private key.
+
+## Conclusion
+
+SSH commit signing is a powerful tool that provides integrity, authentication, and non-repudiation for your commits.
+Although we explored signing an arbitrary file in this post, the same principles apply to signing commits.
+I chose not to go into the details of setting up commit signing with Git because it is [well-documented and easy to set up](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
+
+There are many other options to explore with ssh-keygen, but this understanding is definitely a step in the right direction.
